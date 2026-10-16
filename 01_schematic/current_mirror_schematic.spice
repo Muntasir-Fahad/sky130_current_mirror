@@ -1,0 +1,26 @@
+** sch_path: /home/fahad/Desktop/chip/current_mirror_12_10_26/01_schematic/current_mirror_schematic.sch
+**.subckt current_mirror_schematic
+XM1 net1 net1 0 0 sky130_fd_pr__nfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0 sd=0
++ mult=1
+XM2 net3 net1 0 0 sky130_fd_pr__nfet_01v8 L=4 W=40 nf=1 ad=11.6 as=11.6 pd=80.58 ps=80.58 nrd=0.00725 nrs=0.00725 sa=0 sb=0 sd=0
++ mult=1
+Iref net2 net1 10u
+V1 net2 0 1.8
+V2 net3 0 1.8
+XM3 net4 net1 net5 net6 sky130_fd_pr__nfet_01v8 L=4 W=40 nf=1 ad=11.6 as=11.6 pd=80.58 ps=80.58 nrd=0.00725 nrs=0.00725 sa=0 sb=0
++ sd=0 mult=1
+**** begin user architecture code
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+.control
+op
+dc V2 0 1.8 0.01
+set color0=white
+plot -i(V2)
+write current_mirror_schematic.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+.end

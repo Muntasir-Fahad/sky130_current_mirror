@@ -1,0 +1,22 @@
+# Simulation output
+*.raw
+*.out
+*.data
+*.tmp
+*.bak
+*~
+.DS_Store
+*.swp
+
+# ngspice temp
+tmp_*.spice
+log_*.log
+
+# Magic backup
+*.mag~
+*.ext~
+*.res.ext~
+
+# Keep summary reports
+!*_results.txt
+!*_report.log

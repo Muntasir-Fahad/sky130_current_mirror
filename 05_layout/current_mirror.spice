@@ -1,0 +1,6 @@
+** sch_path: /home/fahad/Desktop/chip/current_mirror_12_10_26/05_layout/current_mirror.sch
+.subckt current_mirror vin vdd gnd
+*.PININFO vin:I vdd:O gnd:B
+XM1 vin vin gnd gnd sky130_fd_pr__nfet_01v8 L=4 W=20 nf=1
+XM2 vdd vin gnd gnd sky130_fd_pr__nfet_01v8 L=4 W=40 nf=1
+.ends
